@@ -53,7 +53,16 @@ Aşağıda listelenen minimum uygulanabilir ürün (MVP) spesifikasyonlarını k
 Aşağıdaki soruları yanıtlayarak bu sprint'in kavramlarını anladığınızı gösterin. Her sorudan sonra yanıtlarınızı eklemek için bu belgeyi düzenleyin.
 
 1. DOM nedir?
+Bir web sayfası tarayıcıya yüklendiğinde tarayıcı ilk olarak HTML dosyasını arar. Ardından tarayıcı, HTML dosyasını sayfayı oluşturmak için bir plan(blueprint) veya talimat olarak kullanır (bu sonra CSS dosyası ile birleştirilir). Son olarak, tarayıcı bu talimatları ayrıştırır ve Javascript kullanarak sayfanın görünümü ve eylemi için bir model oluşturur. Bu model, sayfadaki her öğeyi sırayla içeren bir Javascript Object’tir, yani Javascript Nesnesi. Bu nesne “Document Object Model”(Belge Nesne Modeli) - kısaca “DOM”-  olarak adlandırılır.
+
 2. Bir event nedir?
+Bir site ile her kullanıcı etkileşimi bir “event” yani bir olaydır: tıklama, fareyi hareket ettirme, sayfayı kaydırma, klavyede bir tuşa basma, bunların hepsi sayfadaki olaylardır ve tarayıcı bunların hepsini algılayabilir. Tarayıcının izlediği tonlarca farklı olay vardır. Bir sayfada bir olay gerçekleştiğinde, bu olay tetikleyici(”trigger”) olarak bilinir.
+
 3. Bir event dinleyici(listener) nedir?
-4. Neden bir NodeList'i Array'e dönüştürelim??
+Bir öğenin dinleyebileceği düzinelerce olay vardır. Daha sonra, bu olaylardan biri o öğe üzerinde gerçekleştiğinde, bununla ilgili bir şey yapabiliriz. İzleme sürecine ve ardından gerçekleştirilen eyleme “olay dinleyicisi”(”event listener”) denir. Bir öğeye bir olay dinleyicisi koyarız ve ona bir callback veririz. Eleman üzerinde bu olay tetiklendiğinde, geri arama çalıştırılır.
+
+4. Neden bir NodeList'i Array'e dönüştürelim?
+Örneğin; querySelectorAll() bize statik bir NodeList döndürür. Dönen sonuç diziye benzer ama değildir. Fakat NodeList, nasıl eriştiğinize bağlı olarak farklı davranır. Elementlere childNodes kullanarak erişirseniz eğer, döndürülen liste canlıdır ve düğüme daha fazla öğe eklendikçe güncellenir. querySelectorAll() kullanılarak erişilirse, döndürülen liste statiktir ve düğüme daha fazla öğe eklenirse güncellenmez. Canlı ve statik düğüm arasındaki temel fark; DOM’a bir öğe eklendiğinde, canlı bir düğümün yeni öğeyi tanıyacağı ancak statik düğümün ise tanımayacağıdır. Array canlı bir listedir; ancak Nodelist statik bir listedir. Ekleme veya çıkarma yapılamaz. 
+
 5. Bileşen nedir?
+Bir component birkaç parçadan oluşur: HTML, CSS veya bir web sitesinde ya da uygulamada yeniden kullanılmak üzere bir araya getirilmiş JavaScript.
